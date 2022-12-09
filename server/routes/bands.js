@@ -3,6 +3,6 @@ import { getSimilarBands } from "../controllers/bands.js";
 
 const router = express.Router();
 
-router.get("/:bandName", getSimilarBands);
+router.get("/:band", getSimilarBands);
 
 export default router;

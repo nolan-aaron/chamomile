@@ -1,11 +1,10 @@
 import axios from "axios";
 
 export const getSimilarBands = async (req, res) => {
-  const bandName = req.params.bandName;
-  const searchType = "music";
+  const band = req.params.band;
   const numResults = 30;
   const token = process.env.TASTEDIVE_API;
-  const url = `https://tastedive.com/api/similar?q=${bandName}&type=${searchType}&limit=${numResults}&k=${token}`;
+  const url = `https://tastedive.com/api/similar?q=${band}&type="music"&limit=${numResults}&k=${token}`;
 
   try {
     const response = await axios.get(url);
