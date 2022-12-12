@@ -8,7 +8,7 @@ export const getSimilarBands = async (req, res) => {
 
   try {
     const response = await axios.get(url);
-    res.status(200).json(response.data);
+    res.status(200).json(response.data.Similar.Results);
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
