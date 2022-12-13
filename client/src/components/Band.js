@@ -1,12 +1,12 @@
-const Band = ({ bandName }) => {
-  function handleClick() {
-    alert(`You clicked ${bandName}!`);
-  }
+import { useNavigate } from "react-router-dom";
+
+const Band = ({ band }) => {
+  const navigate = useNavigate();
 
   return (
-    <spa className="me-4">
-      <code onClick={handleClick}>{bandName}</code>
-    </spa>
+    <span className="me-4">
+      <code onClick={() => navigate(`/about/${band}`)}>{band}</code>
+    </span>
   );
 };
 

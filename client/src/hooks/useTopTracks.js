@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 
-export const useSimilarBands = (band) => {
-  const [bands, setBands] = useState([]);
+export const useTopTracks = (band) => {
+  const [tracks, setTracks] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const fetchBands = async (band) => {
+  const fetchTracks = async (band) => {
     try {
       setLoading(true);
-      const response = await fetch(`/bands/${band}`);
+      const response = await fetch(`/tracks/${band}`);
       const data = await response.json();
-      setBands(data);
+      setTracks(data);
       setLoading(false);
     } catch (error) {
       setError(error);
@@ -19,11 +19,11 @@ export const useSimilarBands = (band) => {
   };
 
   useEffect(() => {
-    fetchBands(band);
+    fetchTracks(band);
   }, [band]);
 
   return {
-    bands,
+    tracks,
     loading,
     error,
   };

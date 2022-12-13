@@ -16,7 +16,9 @@ const NavBar = () => {
       <Container fluid>
         <Nav>
           <Nav.Link eventKey="/">
-            <Navbar.Brand>Chamomile</Navbar.Brand>
+            <Navbar.Brand>
+              <code>Chamomile</code>
+            </Navbar.Brand>
           </Nav.Link>
         </Nav>
         <Nav>
