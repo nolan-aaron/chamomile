@@ -1,9 +1,5 @@
-const Error = (props) => {
-  return (
-    <div>
-      <code>{props.error.message}</code>
-    </div>
-  );
+const Error = ({ error }) => {
+  return console.log(error.message);
 };
 
 export default Error;

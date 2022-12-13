@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export const useBands = (band) => {
+export const useSimilarBands = (band) => {
   const [bands, setBands] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

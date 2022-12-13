@@ -1,7 +1,11 @@
-const Band = (props) => {
+const Band = ({ bandName }) => {
+  function handleClick() {
+    alert(`You clicked ${bandName}!`);
+  }
+
   return (
     <div>
-      <code>{props.name}</code>
+      <code onClick={handleClick}>{bandName}</code>
     </div>
   );
 };
