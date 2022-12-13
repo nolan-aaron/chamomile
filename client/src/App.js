@@ -1,15 +1,14 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Nav from "./components/Nav.js";
+import NavBar from "./components/NavBar.js";
 import SimilarBands from "./components/SimilarBands.js";
-import "./App.css";
 import Home from "./pages/Home.js";
 
 function App() {
   return (
     <BrowserRouter>
-      <Nav />
-      <div className="App">
+      <NavBar />
+      <div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:band" element={<SimilarBands />} />

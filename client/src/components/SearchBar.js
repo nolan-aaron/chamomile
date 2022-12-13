@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 const SearchBar = ({ placeholderText }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -11,19 +13,23 @@ const SearchBar = ({ placeholderText }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate(`/${searchTerm}`);
+    navigate(`/${searchTerm.toLowerCase()}`);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
+    <Form className="d-flex" onSubmit={handleSubmit}>
+      <Form.Control
         onChange={handleChange}
         value={searchTerm}
-        type="search"
         placeholder={placeholderText}
+        type="search"
+        aria-label="Search"
+        className="me-2"
       />
-      <button type="submit">Search</button>
-    </form>
+      <Button variant="outline-dark" type="submit">
+        Search
+      </Button>
+    </Form>
   );
 };
 

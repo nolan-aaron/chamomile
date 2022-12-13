@@ -1,6 +1,6 @@
 import Band from "./Band.js";
-import Loading from "./Loading.js";
 import Error from "./Error.js";
+import Spinner from 'react-bootstrap/Spinner';
 import { useSimilarBands } from "../hooks/useSimilarBands.js";
 import { useParams } from "react-router-dom";
 
@@ -13,8 +13,8 @@ const SimilarBands = () => {
   ));
 
   return (
-    <div>
-      {loading && !error ? <Loading /> : similarBands}
+    <div className="p-3">
+      {loading && !error ? <Spinner animation="border" variant="success" role="status"/> : similarBands}
       {error && <Error error={error} />}
     </div>
   );

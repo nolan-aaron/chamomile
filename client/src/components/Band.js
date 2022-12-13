@@ -4,9 +4,9 @@ const Band = ({ bandName }) => {
   }
 
   return (
-    <div>
+    <spa className="me-4">
       <code onClick={handleClick}>{bandName}</code>
-    </div>
+    </spa>
   );
 };
 
